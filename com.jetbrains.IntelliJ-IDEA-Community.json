@@ -1,0 +1,70 @@
+{
+    "app-id": "com.jetbrains.IntelliJ-IDEA-Community",
+    "runtime": "org.freedesktop.Sdk",
+    "runtime-version": "1.6",
+    "sdk": "org.freedesktop.Sdk",
+    "sdk-extensions": [
+        "org.freedesktop.Sdk.Extension.openjdk9"
+    ],
+    "command": "idea-desktop",
+    "separate-locales": false,
+    "finish-args": [
+        "--share=ipc",
+        "--socket=x11",
+        "--share=network",
+        "--device=dri",
+        "--filesystem=host",
+        "--socket=session-bus",
+        "--talk-name=org.freedesktop.Notifications",
+        "--talk-name=org.freedesktop.secrets",
+        "--filesystem=xdg-run/keyring",
+        "--env=PATH=/usr/bin:/app/bin:/usr/lib/sdk/openjdk9/bin"
+    ],
+    "modules": [
+          {
+              "name": "openjdk",
+              "buildsystem": "simple",
+              "build-commands": [
+                "/usr/lib/sdk/openjdk9/install.sh"
+              ]
+          },
+          {
+            "name": "idea",
+            "buildsystem": "simple",
+            "build-commands": [
+                "tar xzfv ideaIC-2018.1.5-no-jdk.tar.gz",
+                "install -dm755 /app/bin",
+                "install -dm755 /app/idea",
+                "cp -r idea-IC-181.5281.24/* /app/idea",
+                "chmod -R a-s,go+rX,go-w /app/idea",
+                "install idea-IC-181.5281.24/bin/idea.sh /app/bin/idea",
+                "install -Dm644 idea-IC-181.5281.24/bin/idea.png /app/share/icons/hicolor/96x96/apps/com.jetbrains.IntelliJ-IDEA-Community.png",
+                "install -Dm644 com.jetbrains.IntelliJ-IDEA-Community.desktop /app/share/applications/com.jetbrains.IntelliJ-IDEA-Community.desktop",
+                "install -Dm644 com.jetbrains.IntelliJ-IDEA-Community.appdata.xml /app/share/appdata/com.jetbrains.IntelliJ-IDEA-Community.appdata.xml",
+                "install -m755 idea-desktop /app/bin/idea-desktop"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://download.jetbrains.com/idea/ideaIC-2018.1.5-no-jdk.tar.gz",
+                    "sha256": "d819ae48bc96f4bf6864e9d9a3e28880639bafd0e4e7be4347b907b3ffd763ad"
+                },
+                {
+                    "type": "file",
+                    "path": "com.jetbrains.IntelliJ-IDEA-Community.appdata.xml"
+                },
+                {
+                    "type": "file",
+                    "path": "com.jetbrains.IntelliJ-IDEA-Community.desktop"
+                },
+                {
+                    "type": "script",
+                    "dest-filename": "idea-desktop",
+                    "commands": [
+                        "exec env IDEA_JDK=/usr/lib/sdk/openjdk9 IDEA_VM_OPTIONS=/app/idea/bin/idea64.vmoptions /app/idea/bin/idea.sh \"$@\""
+                    ]
+                }
+            ]
+        }
+    ]
+}

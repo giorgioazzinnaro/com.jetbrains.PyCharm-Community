@@ -1,29 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2015 Petr Hracek <phracek@redhat.com> -->
 <application>
-    <id type="desktop">com.jetbrains.PyCharm-Community.desktop</id>
+    <id type="desktop">com.jetbrains.IntelliJ-IDEA-Community.desktop</id>
     <metadata_license>CC-BY-SA</metadata_license>
     <project_license>Apache-2.0</project_license>
-    <name>PyCharm-Community</name>
-    <summary>Pycharm - The most intelligent Python IDE</summary>
+    <name>IDEA-Community</name>
+    <summary>IntelliJ IDEA - The most intelligent Java IDE</summary>
     <description>
+        <p>    
+        Every aspect of IntelliJ IDEA is specifically designed to maximize developer productivity.
+        </p>
         <p>
-          PyCharm’s smart code editor provides first-class support for Python, JavaScript, CoffeeScript, TypeScript, CSS, popular template languages and more. Take advantage of language-aware code completion, error detection, and on-the-fly code fixes!
+        Together, powerful static code analysis and ergonomic design make development not only productive but also an enjoyable experience.
         </p>
     </description>
     <screenshots>
-        <screenshot type="default" width="1968" height="814">
-           https://www.jetbrains.com/pycharm/img/screenshots/complexLook@2x.jpg
+        <screenshot type="default" width="1008" height="705">
+           https://www.jetbrains.com/idea/img/screenshots/idea_overview_5_1.png
         </screenshot>
-        <screenshot width="1968" height="814">
-           https://www.jetbrains.com/pycharm/img/screenshots/simpleLook@2x.jpg
+        <screenshot width="1008" height="705">
+           https://www.jetbrains.com/idea/img/screenshots/idea_overview_2.png
+        </screenshot>
+        <screenshot width="1008" height="377">
+           https://www.jetbrains.com/idea/img/screenshots/idea_overview_6_1.png
+        </screenshot>
+        <screenshot width="686" height="325">
+           https://www.jetbrains.com/idea/img/screenshots/idea_overview_3.png
         </screenshot>
     </screenshots>
-    <url type="homepage">http://www.jetbrains.com/pycharm/</url>
+    <url type="homepage">http://www.jetbrains.com/idea/</url>
 
-    <updatecontact>phracek@redhat.com</updatecontact>
+    <updatecontact>giorgio.azzinnaro+flatpakidea@gmail.com</updatecontact>
     <releases>
-        <release version="2018.1.4" date="2018-06-10" />
+        <release version="2018.1.5" date="2018-06-13" />
     </releases>
     <content_rating type="oars-1.0">
         <content_attribute id="violence-cartoon">none</content_attribute>

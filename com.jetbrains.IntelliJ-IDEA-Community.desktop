@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=IntelliJ IDEA Community Edition
+GenericName=IntelliJ IDEA Community Edition - The most intelligent Java IDE
+Exec=idea-desktop
+Terminal=false
+Icon=com.jetbrains.IntelliJ-IDEA-Community
+Type=Application
+Categories=Development;
+X-Desktop-File-Install-Version=0.21
+StartupWMClass=jetbrains-idea-ce
